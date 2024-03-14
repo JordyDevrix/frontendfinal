@@ -1,5 +1,9 @@
+// import { Category } from "./category.model";
+
 export class Product {
-  public name: string
-  public price: number
-  public category: string
+  public id: number;
+  public name: string;
+  public description: string;
+  public price: number;
+  // public category: Category;
 }
