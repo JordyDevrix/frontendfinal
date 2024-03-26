@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">{{title}}</span>
+    <span class="navbar-brand mb-0 h1 deleteb">{{title}}</span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,19 @@
           <a class="nav-link" [routerLinkActive]="['active']" routerLink="/categories">Categories</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/cart">Cart ({{amountOfProducts}}) </a>
+          <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/cart">Cart ({{amountOfProducts}}) </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/order">Order history</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="onLogout()" class="nav-link deleteb" *ngIf="userIsLoggedIn" style="color: lightcoral;">Log out</a>
         </li>
       </ul>
     </div>

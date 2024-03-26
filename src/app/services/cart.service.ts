@@ -10,6 +10,11 @@ const localStorageKey: string = "products-in-cart"
   providedIn: 'root'
 })
 export class CartService {
+  public clearCart() {
+    this.productsInCart.splice(0, this.productsInCart.length);
+    this.saveProductsAndNotifyChange();
+  }
+
   private productsInCart: Product[] = [];
   public $productInCart: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
