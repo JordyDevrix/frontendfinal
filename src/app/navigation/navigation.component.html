@@ -10,28 +10,28 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"
-            routerLink="/">Home</a>
+            routerLink="/">Home <i class="fa-solid fa-house"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/products">Products</a>
+          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/products">Products <i class="fa-solid fa-shop"></i></a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" routerLink="/categories">Categories</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/cart">Cart ({{amountOfProducts}}) </a>
+          <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/cart">Cart ({{amountOfProducts}}) <i class="fa-solid fa-cart-shopping"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']" *ngIf="!userIsLoggedIn">Login</a>
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']" *ngIf="!userIsLoggedIn">Login <i class="fa-solid fa-right-to-bracket"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']" *ngIf="!userIsLoggedIn">Register</a>
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']" *ngIf="!userIsLoggedIn">Register <i class="fa-solid fa-plus"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/order">Order history</a>
+          <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/order">Order history <i class="fa-solid fa-receipt"></i></a>
         </li>
         <li class="nav-item">
-          <a (click)="onLogout()" class="nav-link deleteb" *ngIf="userIsLoggedIn" style="color: lightcoral;">Log out</a>
+          <a (click)="onLogout()" class="nav-link deleteb" *ngIf="userIsLoggedIn" style="color: lightcoral;">Log out <i class="fa-solid fa-right-from-bracket"></i></a>
         </li>
       </ul>
     </div>

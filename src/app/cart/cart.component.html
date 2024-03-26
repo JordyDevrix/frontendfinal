@@ -2,9 +2,9 @@
   <div class="row d-flex justify-content-center">
     <div class="col-xl-11">
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+        <h3 class="fw-normal mb-0 text-black">Shopping Cart | <i class="fa-solid fa-cart-shopping"></i></h3>
         <h4 class="fw-normal mb-0 text-black">Total: {{totalPrice | currency }}</h4>
-        <button (click)="saveProduct()">Buy all</button>
+        <button (click)="saveProduct()">Buy all <i class="fa-solid fa-bag-shopping"></i></button>
       </div>
       @for (product of products_in_cart; track $index){
       <div class="card rounded-3 mb-4">
@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
               <a (click)="removeProductFromCart($index)" class="text-danger deleteb">
-                Delete
+                Delete <i class="fa-solid fa-trash"></i>
               </a>
             </div>
           </div>
