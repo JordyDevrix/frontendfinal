@@ -22,10 +22,10 @@
           <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/cart">Cart ({{amountOfProducts}}) </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']">Login</a>
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']" *ngIf="!userIsLoggedIn">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']">Register</a>
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']" *ngIf="!userIsLoggedIn">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/order">Order history</a>
