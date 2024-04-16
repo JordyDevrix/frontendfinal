@@ -17,7 +17,7 @@ export class OrderService {
   private orders: Order[] = [];
   public $orders: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
   
-  private baseUrl: string = environment.base_url + "/orderlist";
+  private baseUrl: string = environment.base_url + "/private/orders";
   
   constructor(private http: HttpClient, private authService: AuthService) { }
   
@@ -47,7 +47,7 @@ export class OrderService {
     }
     const headers = new HttpHeaders().set('Authorization', token);
     // return this.http.post<Order>(this.baseUrl, orderlist); // Modify method to make an HTTP POST request
-    return this.http.get<any[]>(this.baseUrl + "/get", { headers });
+    return this.http.get<any[]>(this.baseUrl + "/all", { headers });
     
   }
 }

@@ -10,8 +10,8 @@ import { TokenService } from './token.service';
 })
 export class AuthService {
 
-  private _loginEndpoint: string = 'http://localhost:8080/api/auth/login';
-  private _registerEndpoint: string = 'http://localhost:8080/api/auth/register';
+  private _loginEndpoint: string = 'http://s1151166.student.inf-hsleiden.nl:21166/api/auth/login';
+  private _registerEndpoint: string = 'http://s1151166.student.inf-hsleiden.nl:21166/api/auth/register';
 
   private _httpOptions = {
     headers: new HttpHeaders({
