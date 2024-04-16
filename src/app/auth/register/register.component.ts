@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
 
   }
 
@@ -33,8 +34,16 @@ export class RegisterComponent implements OnInit {
   }
 
   public onSubmit(): void {
+    if (this.registerForm.value.password !== this.registerForm.value.repeated_password) {
+      console.log('Passwords do not match');
+      alert('❌ Repeated password does not match ❌');
+      this.registerForm.reset();
+      return;
+    }
     this.authService.register(this.registerForm.value).subscribe((authResponse: { "token": string }) => {
       console.log(authResponse.token, 'User registered');
+      alert('User registered ✅');
+      this.router.navigate(['/products']);
 
     })
   }

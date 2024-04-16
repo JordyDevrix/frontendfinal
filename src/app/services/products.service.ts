@@ -12,14 +12,14 @@ import { Order } from '../models/order.model';
 })
 export class ProductsService {
 
-  private baseUrl: string = environment.base_url + "/pub/products";
+  private baseUrl: string = environment.base_url + "/products";
 
   private baseUrl2: string = environment.base_url + "/private/orders/all";
 
   constructor(private http: HttpClient) { }
 
   public getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.baseUrl}/all`);
+    return this.http.get<Product[]>(`${this.baseUrl}/get`);
   }
 
   public getOrderList(): Observable<Order[]> {
@@ -31,7 +31,7 @@ export class ProductsService {
   }
 
   public getProductByIndex(id: number): Observable<Product> {
-    return this.http.get<Product>(`${this.baseUrl}/${id}`);
+    return this.http.get<Product>(`${this.baseUrl}/get/${id}`);
   }
 
   public updateProductByIndex(id: number, product: Product): Observable<Product> {

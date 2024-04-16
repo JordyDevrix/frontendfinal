@@ -45,6 +45,11 @@ export class CartComponent implements OnInit {
   }
 
   public saveProduct() {
+    if (this.products_in_cart.length == 0) {
+      alert('U heeft geen producten in uw winkelmandje ❌');
+      return;
+    }
+
     let cartValue = 0;
     this.orderedproduct = [];
     for (let product of this.products_in_cart) {
@@ -66,5 +71,7 @@ export class CartComponent implements OnInit {
     for (let product of this.products_in_cart) {
       this.cartService.clearCart();
     }
+
+    alert('Uw order is aangemaakt! ✅');
   }
 }

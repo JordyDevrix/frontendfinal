@@ -3,7 +3,8 @@
 export class Product {
   public id: number;
   public name: string;
-  public description_nl: string;
+  public description: string;
   public price: number;
+  public url: string;
   // public category: Category;
 }

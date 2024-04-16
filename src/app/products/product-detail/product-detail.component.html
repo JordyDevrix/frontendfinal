@@ -2,9 +2,9 @@
 <div class="justify-content-center">
     <h2>{{ product.name }}</h2>
     <div class="col-md-2 col-lg-2 col-xl-2">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+        <img src="{{ product.url }}"
           class="img-fluid rounded-3" alt="Cotton T-shirt">
       </div>
     <h3>{{ product.price }}</h3>
-    <p>{{ product.description_nl }}</p>
+    <p>{{ product.description }}</p>
 </div>
