@@ -12,14 +12,14 @@ import { Order } from '../models/order.model';
 })
 export class ProductsService {
 
-  private baseUrl: string = environment.base_url + "/products/get";
+  private baseUrl: string = environment.base_url + "/pub/products";
 
-  private baseUrl2: string = environment.base_url + "/orderedlist/get";
+  private baseUrl2: string = environment.base_url + "/private/orders/all";
 
   constructor(private http: HttpClient) { }
 
   public getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl);
+    return this.http.get<Product[]>(`${this.baseUrl}/all`);
   }
 
   public getOrderList(): Observable<Order[]> {
