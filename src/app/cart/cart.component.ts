@@ -46,7 +46,7 @@ export class CartComponent implements OnInit {
 
   public saveProduct() {
     if (this.products_in_cart.length == 0) {
-      alert('U heeft geen producten in uw winkelmandje ❌');
+      alert('❌ U heeft geen producten in uw winkelmandje ❌');
       return;
     }
 

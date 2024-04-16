@@ -1,10 +1,12 @@
-
-<div class="justify-content-center">
+<div class="justify-content-center" style="margin-bottom: 3em;">
     <h2>{{ product.name }}</h2>
-    <div class="col-md-2 col-lg-2 col-xl-2">
+    <div class="col-md-2 col-lg-2 col-xl-2 imager">
         <img src="{{ product.url }}"
-          class="img-fluid rounded-3" alt="Cotton T-shirt">
+          class="" alt="{{ product.name }}" height="350px">
       </div>
-    <h3>{{ product.price }}</h3>
+      <hr>
+    <h3>{{ product.price | currency }}</h3>
+    <p><strong>Beschrijving</strong></p>
+    <p>{{ product.category }}</p>
     <p>{{ product.description }}</p>
 </div>

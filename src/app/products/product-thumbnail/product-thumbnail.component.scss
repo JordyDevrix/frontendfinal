@@ -1,0 +1,13 @@
+img {
+    transition: transform 0.1s;
+}
+
+img:hover {
+    transform: scale(1.2);
+}
+
+.imager {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 2em;
+}

@@ -6,5 +6,6 @@ export class Product {
   public description: string;
   public price: number;
   public url: string;
+  public category: string;
   // public category: Category;
 }

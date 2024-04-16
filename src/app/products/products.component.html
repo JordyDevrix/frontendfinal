@@ -1,7 +1,10 @@
 <h3>Producten overzicht</h3>
 
 @if (loadingProducts){
-<p>Loading products...</p>
+<div>
+    <p>Loading products...</p>
+    <img src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=6c09b952hg2r7habcyd2qk8y63bwu0wuoksdbq52xjo0o9w6&ep=v1_gifs_search&rid=200w.gif&ct=g" alt="">
+</div>
 } @else {
 @for (product of products; track $index){
 <app-product-thumbnail [product]="product" (onBuyProduct)="onBuyProduct(product)"></app-product-thumbnail>

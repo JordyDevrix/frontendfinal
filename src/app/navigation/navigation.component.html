@@ -18,8 +18,12 @@
         <!-- <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" routerLink="/categories">Categories</a>
         </li> -->
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/cart">Cart ({{amountOfProducts}}) <i class="fa-solid fa-cart-shopping"></i></a>
+        <li class="nav-item" *ngIf="userIsLoggedIn">
+          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/cart">Cart <i class="fa-solid fa-cart-shopping"></i>
+            <span 
+            class="badge bg-danger" 
+            style="border-radius: 26px; margin-left: 2px;"> {{amountOfProducts}} </span>
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']" *ngIf="!userIsLoggedIn">Login <i class="fa-solid fa-right-to-bracket"></i></a>
