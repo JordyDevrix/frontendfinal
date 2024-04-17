@@ -34,6 +34,7 @@ export class NavigationComponent implements OnInit {
   public onLogout(): void{
     this.authService.logOut();
     this.router.navigate(['/']);
+    alert('U bent uitgelogd');
   }
 
   public checkLoginState(): void{

@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       .subscribe((authReponse: AuthResponse) => {
         console.log('AuthResponse: ', authReponse);
         this.router.navigate(['']);
+        alert(`Welkom terug!`);
       });
   }
 }

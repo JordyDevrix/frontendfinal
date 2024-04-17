@@ -13,13 +13,13 @@
             routerLink="/">Home <i class="fa-solid fa-house"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/products">Products <i class="fa-solid fa-shop"></i></a>
+          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/products">Producten <i class="fa-solid fa-shop"></i></a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" routerLink="/categories">Categories</a>
         </li> -->
         <li class="nav-item" *ngIf="userIsLoggedIn">
-          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/cart">Cart <i class="fa-solid fa-cart-shopping"></i>
+          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/cart">Winkelmand <i class="fa-solid fa-cart-shopping"></i>
             @if (amountOfProducts > 0) {
               <span 
               class="badge bg-danger" 
@@ -27,17 +27,23 @@
             }
           </a>
         </li>
+        <li class="nav-item" style="padding: 8px;">
+          <div class="input" width="300px">
+            <input type="text" placeholder="Zoeken">
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+          </div>
+        </li>
         <li class="nav-item" *ngIf="!userIsLoggedIn">
           <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']">Login <i class="fa-solid fa-right-to-bracket"></i></a>
         </li>
         <li class="nav-item" *ngIf="!userIsLoggedIn">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']">Register <i class="fa-solid fa-plus"></i></a>
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']">Registreren <i class="fa-solid fa-plus"></i></a>
         </li>
         <li class="nav-item" *ngIf="userIsLoggedIn">
-          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/order">Profile <i class="fa-solid fa-user"></i></a>
+          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/order">Profiel <i class="fa-solid fa-user"></i></a>
         </li>
         <li class="nav-item" *ngIf="userIsLoggedIn">
-          <a (click)="onLogout()" class="nav-link deleteb" style="color: #dc3545;">Log out <i class="fa-solid fa-right-from-bracket"></i></a>
+          <a (click)="onLogout()" class="nav-link deleteb" style="color: #dc3545;">Uitloggen <i class="fa-solid fa-right-from-bracket"></i></a>
         </li>
       </ul>
     </div>
