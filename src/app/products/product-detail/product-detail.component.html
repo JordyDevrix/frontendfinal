@@ -1,12 +1,16 @@
 <div class="justify-content-center" style="margin-bottom: 3em;">
-    <h2>{{ product.name }}</h2>
+    <h2>{{ brand.brand }} - {{ product.name }}</h2>
     <div class="col-md-2 col-lg-2 col-xl-2 imager">
         <img src="{{ product.url }}"
           class="" alt="{{ product.name }}" height="350px">
       </div>
       <hr>
-    <h3>{{ product.price | currency }}</h3>
+    <div class="d-flex align-items-center">
+      <h3 class="p-2" style="margin: 0px;">{{ product.price | currency }}</h3>
+      <button (click)="buyProduct(product)" class="btn btn-primary p-2" style="margin-left: 1em; border-radius: 1000px;" *ngIf="userIsLoggedIn">
+        Add to cart <i class="fa-solid fa-plus"></i></button>
+    </div>
     <p><strong>Beschrijving</strong></p>
-    <p>{{ product.category }}</p>
+    <p>{{ category.name }}</p>
     <p>{{ product.description }}</p>
 </div>

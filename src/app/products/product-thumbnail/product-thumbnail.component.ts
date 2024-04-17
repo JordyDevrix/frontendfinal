@@ -3,6 +3,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../models/product.model';
 import {NgIf} from "@angular/common";
 import { AuthService } from '../../auth/auth.service';
+import { Brand } from '../../models/brand.model';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-product-thumbnail',
@@ -14,11 +16,21 @@ export class ProductThumbnailComponent implements OnInit{
   @Output() public onBuyProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
   public userIsLoggedIn: boolean = false;
+  public brand: Brand;
   
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private productsService: ProductsService){}
 
   ngOnInit() {
     this.checkLoginState();
+
+    this.productsService
+      .getProductBrandByIndex(this.product.id)
+      .subscribe((brand: Brand) => {
+        this.brand = brand;
+      });
+  }
+  productId(productId: any) {
+    throw new Error('Method not implemented.');
   }
 
   public buyProduct(product: Product) {

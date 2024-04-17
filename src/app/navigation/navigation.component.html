@@ -20,22 +20,24 @@
         </li> -->
         <li class="nav-item" *ngIf="userIsLoggedIn">
           <a class="nav-link" [routerLinkActive]="['active']" routerLink="/cart">Cart <i class="fa-solid fa-cart-shopping"></i>
-            <span 
-            class="badge bg-danger" 
-            style="border-radius: 26px; margin-left: 2px;"> {{amountOfProducts}} </span>
+            @if (amountOfProducts > 0) {
+              <span 
+              class="badge bg-danger" 
+              style="border-radius: 26px; margin-left: 2px;"> {{amountOfProducts}} </span>
+            }
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']" *ngIf="!userIsLoggedIn">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+        <li class="nav-item" *ngIf="!userIsLoggedIn">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']">Login <i class="fa-solid fa-right-to-bracket"></i></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']" *ngIf="!userIsLoggedIn">Register <i class="fa-solid fa-plus"></i></a>
+        <li class="nav-item" *ngIf="!userIsLoggedIn">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'register']">Register <i class="fa-solid fa-plus"></i></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" *ngIf="userIsLoggedIn" routerLink="/order">Order history <i class="fa-solid fa-receipt"></i></a>
+        <li class="nav-item" *ngIf="userIsLoggedIn">
+          <a class="nav-link" [routerLinkActive]="['active']" routerLink="/order">Profile <i class="fa-solid fa-user"></i></a>
         </li>
-        <li class="nav-item">
-          <a (click)="onLogout()" class="nav-link deleteb" *ngIf="userIsLoggedIn" style="color: lightcoral;">Log out <i class="fa-solid fa-right-from-bracket"></i></a>
+        <li class="nav-item" *ngIf="userIsLoggedIn">
+          <a (click)="onLogout()" class="nav-link deleteb" style="color: #dc3545;">Log out <i class="fa-solid fa-right-from-bracket"></i></a>
         </li>
       </ul>
     </div>

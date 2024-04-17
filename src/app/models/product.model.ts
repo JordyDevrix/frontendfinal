@@ -7,5 +7,5 @@ export class Product {
   public price: number;
   public url: string;
   public category: string;
-  // public category: Category;
+  public brand : string;
 }

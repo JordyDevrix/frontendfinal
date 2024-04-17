@@ -1,0 +1,12 @@
+<div class="main" style="width: 230px; height: 450px; border-radius: 10px;">
+    @if (product.name.length > 25) {
+        <h4 style="margin-top: 5px; padding: 5px;">{{ product.name | slice:0:25 }}...</h4>
+    } @else {
+        <h4 style="margin-top: 5px; padding: 5px;">{{ product.name }}</h4>
+    }
+    <div style="padding: 5px;">
+        <img src="{{ product.url }}" alt="" width="220px">
+    </div>
+    <hr style="padding-left: 5px; padding-right: 5px;">
+    <p style="padding-left: 10px; padding-right: 10px;">{{ product.description }}</p>
+</div>
