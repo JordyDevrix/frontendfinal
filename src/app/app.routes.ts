@@ -8,6 +8,7 @@ import {LoginComponent} from "./auth/login/login.component";
 import {authGuard} from "./auth/auth.guard";
 import { OrderComponent } from './orderlist/orderlist.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { SearchResultsComponent } from './searchresults/searchresults.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ export const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
     ]
-  }
+  },
+  { path: 'results', component: SearchResultsComponent }
 ];
 

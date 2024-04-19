@@ -28,10 +28,7 @@
           </a>
         </li>
         <li class="nav-item" style="padding: 8px;">
-          <div class="input" width="300px">
-            <input type="text" placeholder="Zoeken">
-            <a class="zoek" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-          </div>
+          <app-searchbar></app-searchbar>
         </li>
         <li class="nav-item" *ngIf="!userIsLoggedIn">
           <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['auth', 'login']">Login <i class="fa-solid fa-right-to-bracket"></i></a>

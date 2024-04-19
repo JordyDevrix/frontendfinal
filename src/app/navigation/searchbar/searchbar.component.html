@@ -1,0 +1,6 @@
+<div class="input" width="300px">
+    <input name="searchtext" type="text" placeholder="Zoeken" (input)="newEvent($event)">
+    <button class="zoek" (click)="search()" [routerLinkActive]="['active']" [routerLink]="['/results']" [queryParams]="{q:myString}">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</div>
