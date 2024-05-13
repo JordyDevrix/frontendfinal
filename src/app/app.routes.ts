@@ -23,6 +23,7 @@ export const routes: Routes = [
       { path: 'register', component: RegisterComponent },
     ]
   },
-  { path: 'results', component: SearchResultsComponent }
+  { path: 'results', component: SearchResultsComponent },
+  { path: 'results/:id', component: ProductDetailComponent }
 ];
 

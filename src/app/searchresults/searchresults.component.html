@@ -1,12 +1,12 @@
 <div>
     <div>
-        @if (products.length > 0) {
+        @if (productStack.length > 0) {
             <div style="margin-bottom: 3em;">
                 <h3>Resultaten</h3>
             </div>
             <div style="justify-content: center;">
                 <ul style="list-style-type: none;">
-                    @for (product of searchResults; track $index) {
+                    @for (product of productStack; track $index) {
                         <li>
                             <div class="d-flex">
                                 <div class="p-2">
@@ -17,6 +17,8 @@
                                     <p>{{ product.description }}</p>
                                 </div>
                             </div>
+                            <a [routerLink]="[product.id]" class="btn btn-secondary" style="border-radius: 1000px;">
+                                Show detail <i class="fa-solid fa-magnifying-glass"></i></a>
                             <hr>
                         </li>
                     }
