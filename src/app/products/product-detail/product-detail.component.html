@@ -7,8 +7,12 @@
       <hr>
     <div class="d-flex align-items-center">
       <h3 class="p-2" style="margin: 0px;">{{ product.price | currency }}</h3>
-      <button (click)="buyProduct(product)" class="btn btn-primary p-2" style="margin-left: 1em; border-radius: 1000px;" *ngIf="userIsLoggedIn">
-        Add to cart <i class="fa-solid fa-plus"></i></button>
+      <button (click)="buyProduct(product)" class="btn btn-primary p-2" style="margin-left: 1em; border-radius: 1000px;" [ngStyle]="{'color': clickedStyle}" *ngIf="userIsLoggedIn">
+        {{ text }}
+        @if (showPlus === true) {
+          <i class="fa-solid fa-plus"></i>
+        }
+      </button>
     </div>
     <p><strong>Beschrijving</strong></p>
     <p>{{ category.name }}</p>

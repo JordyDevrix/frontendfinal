@@ -12,8 +12,12 @@
   <div class="p-2 flex-shrink-1">
     <a [routerLink]="[product.id]" class="btn btn-secondary" style="border-radius: 1000px;">
       Show detail <i class="fa-solid fa-magnifying-glass"></i></a>
-    <button (click)="buyProduct(product)" class="btn btn-primary float-right" style="margin-top: 1em; border-radius: 1000px;" *ngIf="userIsLoggedIn">
-      Add to cart <i class="fa-solid fa-plus"></i></button>
+    <button (click)="buyProduct(product)" class="btn btn-primary float-right" style="margin-top: 1em; border-radius: 1000px;" [ngStyle]="{'color': clickedStyle}" *ngIf="userIsLoggedIn">
+      {{ text }}
+      @if (showPlus === true) {
+        <i class="fa-solid fa-plus"></i>
+      }
+    </button>
   </div>
 </div>
 <hr>

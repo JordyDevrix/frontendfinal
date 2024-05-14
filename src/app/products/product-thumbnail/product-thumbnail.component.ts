@@ -17,6 +17,9 @@ export class ProductThumbnailComponent implements OnInit{
 
   public userIsLoggedIn: boolean = false;
   public brand: Brand;
+  public text: string = 'Add to cart';
+  public clickedStyle: string = '#FFF';
+  public showPlus: boolean = true;
   
   constructor(private authService: AuthService, private productsService: ProductsService){}
 
@@ -35,6 +38,14 @@ export class ProductThumbnailComponent implements OnInit{
 
   public buyProduct(product: Product) {
     this.onBuyProduct.emit(product);
+    this.text = 'Added to cart';
+    this.clickedStyle = '#0C7';
+    this.showPlus = false;
+    setTimeout(() => {
+      this.text = 'Add to cart';
+      this.clickedStyle = '#FFF';
+      this.showPlus = true;
+    } , 1300);
   }
 
   public checkLoginState(): void{

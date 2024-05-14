@@ -23,6 +23,9 @@ export class ProductDetailComponent implements OnInit{
   public brand: Brand;
   private productId: number;
   public userIsLoggedIn: boolean = false;
+  public text: string = 'Add to cart';
+  public clickedStyle: string = '#FFF';
+  public showPlus: boolean = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -61,6 +64,14 @@ export class ProductDetailComponent implements OnInit{
     console.log(product);
     console.log("Product gekocht")
     this.cartService.addProductToCart(product)
+    this.text = 'Added to cart';
+    this.clickedStyle = '#0C7';
+    this.showPlus = false;
+    setTimeout(() => {
+      this.text = 'Add to cart';
+      this.clickedStyle = '#FFF';
+      this.showPlus = true;
+    } , 1300);
   }
 
   public checkLoginState(): void{
